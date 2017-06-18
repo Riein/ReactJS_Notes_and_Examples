@@ -24,4 +24,28 @@ Components
 	7) Component class variable names must begin with capital letters. 
 	8) React components are written in JSX elements to become component instances and uses capitalization to differenitate between HTML elements or component elements.
 	9) Whenever you make a React component instance, it inherits all of the properties on it's class's instructions object. This means the render function inside is called when you render using ReactDOM.render.
+	10) Can have functions within a component class aside from render.
+		Ex. talk: function () { return <h1>I'm talking.</h1>;};
+	
+Component Interaction
+	1) If you want to use a component within another component, need to use modules.export = <class_name>
+		Ex. modules.export = List;
+	2) To use a component class, need to require it with the path of where that file is.
+		Ex. var List = require('./List');
+	3) A passed in component can be used similar to how ReactDOM render uses a component.
+		Ex. render: function() { return <List />;}
+
+Component Props
+	1) Every component has a props object. This contains information passed into that component.
+		Ex. <MyComponent foo="bar" />
+		Ex2. <Example array={["this", "is", "an array"]} />
+	2) 	Accessed by using this.props and can be specified by the item passed in.
+		Ex. {this.props.firstName}
+	3) Props can be used to check if they contain specific information and checked with an if statement.
+		Ex. if (this.props.name == 'Steve') {}
+	4) Event handlers can be passed to components. Create a function within one component and pass as a prop value.
+		Ex. <Button onClick={this.handleClick} /> could then be used in the Button class as <button onClick={this.props.onClick}>;
+	5) Every component's props object has a property called 'children' which is found with this.props.children
+	6) If component has more than one child between it's JSX tags, props will return an array, otherwise it will return only one child.
+		Ex. if (this.props.children instanceof Array) {}
 	
