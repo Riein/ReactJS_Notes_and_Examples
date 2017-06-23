@@ -12,11 +12,54 @@
 	<body>
 		<div id="root"></div>
 		<script type="text/babel">
+		var Navbar = React.createClass({
+			render: function() {
+				return (
+					<nav className="navbar navbar-default">
+						<div className="container">
+							<div className="navbar-header">
+								<a className="navbar-brand" href="#">ReactStrap</a>
+							</div>
+							<div id="navbar">
+								<ul className="nav navbar-nav">
+									<li><a className="active" href="#">Home</a></li>
+									<li><a href="#">About</a></li>
+									<li><a href="#">Contact</a></li>
+								</ul>
+							</div>
+						</div>
+					</nav>
+				);
+			}
+		});
+		
+		var Jumbotron = React.createClass({
+			render: function() {
+				return (
+					<div>
+						<h1>Jumbotron Component</h1>
+					</div>
+				);
+			}
+		});
+		
+		var Page = React.createClass({
+			render: function() {
+				return (
+					<div>
+						<h1>Page Component</h1>
+					</div>
+				);
+			}
+		});
+		
 		var Theme = React.createClass({
 			render: function() {
 				return (
 					<div>
-						<h1>Theme Component</h1>
+						<Navbar />
+						<Jumbotron />
+						<Page />
 					</div>
 				);
 			}
