@@ -13,18 +13,23 @@
 		<div id="root"></div>
 		<script type="text/babel">
 		var Navbar = React.createClass({
+			getDefaultProps() {
+				return {
+					brand:'ReactStrap'
+				};
+			},
 			render: function() {
 				return (
 					<nav className="navbar navbar-default">
 						<div className="container">
 							<div className="navbar-header">
-								<a className="navbar-brand" href="#">ReactStrap</a>
+								<a className="navbar-brand" href="#">{this.props.brand}</a>
 							</div>
 							<div id="navbar">
 								<ul className="nav navbar-nav">
-									<li className="active"><a href="#">Home</a></li>
-									<li><a href="#">About</a></li>
-									<li><a href="#">Contact</a></li>
+									<li className={(this.props.currentPage === 'home') ? 'active': ''}><a href="#">Home</a></li>
+									<li className={(this.props.currentPage === 'about') ? 'active': ''}><a href="#">About</a></li>
+									<li className={(this.props.currentPage === 'contact') ? 'active': ''}><a href="#">Contact</a></li>
 								</ul>
 							</div>
 						</div>
@@ -39,8 +44,8 @@
 					<div>
 					<div className="jumbotron">
 						<div className="container">
-							<h1>Hello World!</h1>
-							<p className="lead">This is a Bootstrap theme that uses React.js components</p>
+							<h1>{this.props.heading}</h1>
+							<p className="lead">{this.props.lead}</p>
 							<p><a classname="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
 						</div>
 					</div>
@@ -51,10 +56,21 @@
 		
 		var Page = React.createClass({
 			render: function() {
+				var pageContent;
+				if (this.props.currentPage == 'home'){
+					pageContent = 'This is the home page';
+				} else if(this.props.currentPage == 'about') {
+					pageContent = 'This is the about page';
+				} else if(this.props.currentPage == 'contact') {
+					pageContent = 'This is the contact page';
+				} else {
+					pageContent = 'This is the home page';
+				}
 				return (
 					<div>
 						<div className="container">
-							This is the home page
+							<h2>{this.props.currentPage.charAt(0).toUpperCase() + this.props.currentPage.slice(1)}</h2>
+							{pageContent}
 						</div>
 					</div>
 				);
@@ -65,9 +81,9 @@
 			render: function() {
 				return (
 					<div>
-						<Navbar />
-						<Jumbotron />
-						<Page />
+						<Navbar currentPage='about' brand='ReactStrap'/>
+						<Jumbotron heading='Hello World!' text='This is a Bootstrap theme that uses React.js components'/>
+						<Page currentPage='about'/>
 					</div>
 				);
 			}
