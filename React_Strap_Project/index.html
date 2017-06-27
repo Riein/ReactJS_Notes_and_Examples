@@ -28,8 +28,8 @@
 							<div id="navbar">
 								<ul className="nav navbar-nav">
 									<li className={(this.props.currentPage === 'home') ? 'active': ''}><a href="#">Home</a></li>
-									<li className={(this.props.currentPage === 'about') ? 'active': ''}><a href="#">About</a></li>
-									<li className={(this.props.currentPage === 'contact') ? 'active': ''}><a href="#">Contact</a></li>
+								  <li className={(this.props.currentPage === 'about') ? 'active': ''}><a href="#">About</a></li>
+								  <li className={(this.props.currentPage === 'contact') ? 'active': ''}><a href="#">Contact</a></li>
 								</ul>
 							</div>
 						</div>
@@ -37,7 +37,7 @@
 				);
 			}
 		});
-		
+
 		var Jumbotron = React.createClass({
 			render: function() {
 				return (
@@ -45,7 +45,7 @@
 					<div className="jumbotron">
 						<div className="container">
 							<h1>{this.props.heading}</h1>
-							<p className="lead">{this.props.lead}</p>
+							<p className="lead">{this.props.text}</p>
 							<p><a classname="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
 						</div>
 					</div>
@@ -53,7 +53,7 @@
 				);
 			}
 		});
-		
+
 		var Page = React.createClass({
 			render: function() {
 				var pageContent;
@@ -69,22 +69,21 @@
 				return (
 					<div>
 						<div className="container">
-							<h2>{this.props.currentPage.charAt(0).toUpperCase() + this.props.currentPage.slice(1)}</h2>
-							{pageContent}
+						<h2>{this.props.currentPage.charAt(0).toUpperCase() + this.props.currentPage.slice(1)}</h2>
+						{pageContent}
 						</div>
 					</div>
 				);
 			}
 		});
-		
+
 		var Theme = React.createClass({
-			getInitialState() {
+			getInitialState: function () {
 				return {
-					currentPage='home'
+					currentPage: 'home'
 				};
 			},
-			
-			getDefaultProps() {
+			getDefaultProps: function () {
 				return {
 					brand:'ReactStrap',
 					header:'Hello World!',
@@ -94,14 +93,14 @@
 			render: function() {
 				return (
 					<div>
-						<Navbar currentPage={this.state.currentPage} brand={this.props.brand}/>
-						<Jumbotron heading={this.props.header} text={this.props.text}/>
-						<Page currentPage={this.state.currentPage}/>
+					<Navbar currentPage={this.state.currentPage} brand={this.props.brand}/>
+					<Jumbotron heading={this.props.header} text={this.props.text}/>
+					<Page currentPage={this.state.currentPage}/>
 					</div>
 				);
 			}
 		});
-		
+
 		ReactDOM.render(
 			<div>
 				<Theme />
