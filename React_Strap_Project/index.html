@@ -13,10 +13,8 @@
 		<div id="root"></div>
 		<script type="text/babel">
 		var Navbar = React.createClass({
-			getDefaultProps() {
-				return {
-					brand:'ReactStrap'
-				};
+			change: function(page) {
+				this.props.change(page);
 			},
 			render: function() {
 				return (
@@ -27,9 +25,9 @@
 							</div>
 							<div id="navbar">
 								<ul className="nav navbar-nav">
-									<li className={(this.props.currentPage === 'home') ? 'active': ''}><a href="#">Home</a></li>
-								  <li className={(this.props.currentPage === 'about') ? 'active': ''}><a href="#">About</a></li>
-								  <li className={(this.props.currentPage === 'contact') ? 'active': ''}><a href="#">Contact</a></li>
+									<li className={(this.props.currentPage === 'home') ? 'active': ''}><a onClick={this.change.bind(this, 'home')} href="#">Home</a></li>
+									<li className={(this.props.currentPage === 'about') ? 'active': ''}><a onClick={this.change.bind(this, 'about')} href="#">About</a></li>
+									<li className={(this.props.currentPage === 'contact') ? 'active': ''}><a onClick={this.change.bind(this, 'contact')} href="#">Contact</a></li>
 								</ul>
 							</div>
 						</div>
@@ -78,6 +76,10 @@
 		});
 
 		var Theme = React.createClass({
+			handleChange: function(page){
+				//alert(page);
+				this.setState({currentPage:page});
+			},
 			getInitialState: function () {
 				return {
 					currentPage: 'home'
@@ -93,7 +95,7 @@
 			render: function() {
 				return (
 					<div>
-					<Navbar currentPage={this.state.currentPage} brand={this.props.brand}/>
+					<Navbar currentPage={this.state.currentPage} brand={this.props.brand} change={this.handleChange}/>
 					<Jumbotron heading={this.props.header} text={this.props.text}/>
 					<Page currentPage={this.state.currentPage}/>
 					</div>
