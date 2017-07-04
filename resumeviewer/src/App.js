@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import $ from 'jquery';
 import './App.css';
 import Header from './Components/Header';
 import About from './Components/About';
@@ -17,7 +18,18 @@ class App extends Component {
   }
 
   getResumeData() {
-
+    $.ajax({
+      url:'http://localhost:3000/resumeData.json',
+      dataType:'json',
+      cache: false,
+      success: function(data) {
+        this.setState({resumeData: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.log(err);
+        alert(err);
+      }
+    });
   }
 
   componentDidMount() {
