@@ -56,55 +56,57 @@
   "resume":{
     "education":[
       {
-        "school":"University of Life",
-        "degree":"Master in Graphic Design",
-        "graduated":"April 2007",
-        "description":"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. Nullam dictum felis eu pede mollis pretium."
-      },
-      {
-        "school":"School of Cool Designers",
-        "degree":"B.A. Degree in Graphic Design",
-        "graduated":"March 2003",
-        "description":"This is Photoshops version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat"
+        "school":"Washington State University Vancouver",
+        "degree":"Bachelor of Science in Computer Science",
+        "graduated":"May 2014",
+        "description":"Courses: Mobile App Development."
       }
     ],
     "work":[
       {
-        "company":"Awesome Design Studio",
-        "title":"Senior UX Designer ",
-        "years":"March 2010 - Present",
-        "description":"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. Nullam dictum felis eu pede mollis pretium."
+        "company":"Graphic Products",
+        "title":"Software Engineer II ",
+        "years":"June 2014 - Present",
+        "description":"Released label editing program to customers across multiple devices using C++ and Qt. Decreased developer testing time by 40% through creation of an automated testing framework for a label editing application. Delivered a Windows printer driver alongside new company product. Identified and implemented new features to existing software suite to improve usability and functionality based on customer feedback."
       },
       {
-        "company":"Super Cool Studio",
-        "title":"UX Designer",
-        "years":"March 2007 - February 2010",
-        "description":"This is Photoshops version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat"
+        "company":"WaferTech, LLC",
+        "title":"IT Intern",
+        "years":"May 2012 - August 2012",
+        "description":"Migrated company SharePoint pages for multiple departments from SharePoint 2007 to SharePoint 2010. Audited internal permissions system in Lotus to improve efficiency of user permission approval."
       }
     ],
     "skills":[
       {
-        "name":"Photoshop",
-        "level":"60%"
+        "name":"C++",
+        "level":"75%"
       },
       {
-        "name":"Illustrator",
-        "level":"55%"
+        "name":"Qt",
+        "level":"85%"
       },
       {
-        "name":"Wordpress",
+        "name":"Java",
+        "level":"65%"
+      },
+      {
+        "name":"Android",
+        "level":"40%"
+      },
+      {
+        "name":"JavaScript",
         "level":"50%"
       },
       {
-        "name":"CSS",
-        "level":"90%"
+        "name":"React.js",
+        "level":"25%"
       },
       {
-        "name":"HTML5",
-        "level":"80%"
+        "name":"iOS/Swift",
+        "level":"20%"
       },
       {
-        "name":"jQuery",
+        "name":"SQL",
         "level":"50%"
       }
     ]
